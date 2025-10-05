@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(7, 222, 193);
+    
+}
+.box-name{
+    color: black;
+
+}
+
+
+.box{
+    background-origin: padding-box;
+}
+
