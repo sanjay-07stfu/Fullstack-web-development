@@ -1,14 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 body{
-    background-color: rgb(7, 222, 193);
+background: linear-gradient(135deg, #00bcd4, #4caf50);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box{
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
     
 }
 .box-name{
     color: black;
+    
 
 }
 
-
-.box{
-    background-origin: padding-box;
+.profile-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.box-message{
+    height: 3opx;
+    width: 190px;
+    font-size: 17px;
+    color: #333d;
+    margin-bottom: 5%;
+}
+.box-social{
+    color: rgba(41, 13, 204, 0.867);
+    cursor: pointer;
+    font-size: 20px;
+    margin: 5px;
+    
 }
 
