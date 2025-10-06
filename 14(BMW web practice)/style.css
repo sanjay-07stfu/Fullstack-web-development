@@ -1,30 +1,66 @@
-body{
-      background: linear-gradient(to bottom, #2c2c2c, #999);
-      display: flex;
-      justify-content: left;
-      align-items: left;
-      height: 100vh;
-    }
+body {
+    background: linear-gradient(to bottom, #2c2c2c, #999);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("02.webp");
+    /* your image */
+    background-size: cover;
+    /* fill the screen */
+    background-position: center;
+    /* center the image */
+    background-repeat: no-repeat;
+    /* no repeating */
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
 
-.bmw-logo{
-    height: 52px;
-    width: 52px; 
+
+
+
+.bmw-logo {
+    height: 10px;
+    width: 12px;
     display: block;
     transition: transform .25s ease-in-out;
 
 }
-.bmw-botton{
-    
-    text-align: center;
-    font-size: 40px;
+
+.bmw-botton {
+
+    text-align: right;
+    font-size: 60px;
     color: white;
     cursor: pointer;
- 
+
 }
 
-i{
+i {
     display: cover;
     white-space: nowrap;
     height: 20px;
     width: 150px;
+}
+
+#bmw-image {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* full viewport height */
+    overflow: hidden;
+}
+
+#bmw-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* makes the image fill the area */
+    display: block;
+}
+.botton{
+    color: white;
+    cursor: pointer;
+    text-align: right;
+    font-size: 50px;
+
 }
