@@ -1,0 +1,30 @@
+body{
+      background: linear-gradient(to bottom, #2c2c2c, #999);
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      height: 100vh;
+    }
+
+.bmw-logo{
+    height: 52px;
+    width: 52px; 
+    display: block;
+    transition: transform .25s ease-in-out;
+
+}
+.bmw-botton{
+    
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+ 
+}
+
+i{
+    display: cover;
+    white-space: nowrap;
+    height: 20px;
+    width: 150px;
+}
