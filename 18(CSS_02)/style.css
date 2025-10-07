@@ -1,0 +1,12 @@
+/* selector types: */
+
+/* 1. Universal Selector- *{} */
+/* 2. Element Selector- h1{},body{} */
+/* 3. Class Selector-.sanjay{},.logo{} */
+/* 4. Id Selector - #new{},#sanjay{}*/
+
+
+
+body{
+    background-color: #20ECF5;
+}
