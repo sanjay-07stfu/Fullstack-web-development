@@ -1,6 +1,8 @@
 
 body{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(113, 113, 113);
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -13,8 +15,9 @@ body{
 .button{
     color: cadetblue;
     background-color: slateblue;
-    padding:5px;
-    align-content: center;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
 
 }
 
