@@ -5,7 +5,9 @@
 /* 3. Class Selector-.sanjay{},.logo{} */
 /* 4. Id Selector - #new{},#sanjay{}*/
 
-
+*{
+    text-align: center;
+}
 
 body{
     background-color: #20ECF5;
