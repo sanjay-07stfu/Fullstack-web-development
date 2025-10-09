@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f7f8fa;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #0073e6;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0073e6;
+}
+
+/* About Section */
+.about {
+  padding: 60px 10%;
+  background-color: #fff;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.text {
+  max-width: 600px;
+  text-align: left;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Education Section */
+.education {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.education h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.edu-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.edu-card a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.edu-card a:hover {
+  text-decoration: underline;
+}
+
+.edu-card p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
