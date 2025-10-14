@@ -39,7 +39,5 @@ It’s a work-in-progress collection where I experiment with **HTML, CSS, JavaSc
 ---
 
 
-my name is sanjay vitthal yedage....
-
 
 
