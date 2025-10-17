@@ -1,6 +1,11 @@
 *{
     background-color: rgb(15, 193, 220);
+    text-align: end;
+    
 }
-h4{
+h{
     color: rgb(229, 233, 233);
+}
+a{
+    text-decoration:none;
 }
