@@ -3,9 +3,11 @@
     text-align: end;
     
 }
-h{
-    color: rgb(48, 51, 51);
-}
+
 a{
     text-decoration:none;
+    text-decoration:rgb(8, 204, 34)
+}
+.header{
+    color: aliceblue;
 }
