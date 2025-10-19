@@ -6,6 +6,9 @@
 a{
     text-decoration: dotted;
     text-decoration:  rgb(119, 204, 204);
-  
+
     
+}
+#name{
+    font-weight:200;
 }
