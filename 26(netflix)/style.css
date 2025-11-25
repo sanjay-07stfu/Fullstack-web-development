@@ -1,10 +1,13 @@
-*{
-    background-image: image();
-    background-color: black;
+body{
+    background-image: url("01.jpg"); 
+    background-size: cover;      
+    background-repeat: no-repeat; 
+    background-position: center; 
 }
-h1{
 
-    align-content: right;
+.text{
+
+    text-align: center;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
