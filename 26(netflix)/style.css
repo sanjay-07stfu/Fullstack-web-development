@@ -6,7 +6,7 @@ body{
 }
 
 .text{
-
+    
     text-align: center;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -18,3 +18,17 @@ body{
     
 
 } 
+#botton-01{
+ bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: inherit;
+    transition: inherit;
+    border-style: solid;
+    border-width: 0.0625rem;
+    border-radius: calc(0.25rem - 0.0625rem);
+    content: '';
+    border-color: rgba(0, 0, 0, 0);   
+}
