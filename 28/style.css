@@ -8,6 +8,7 @@ header{
     height: 500px;
 }
 #name{
+    text-decoration: none;
     text-align: end;
     margin: 0 20px;
     padding: 12px 28px;
@@ -21,13 +22,16 @@ header{
     cursor: pointer;
     transition: 0.3s ease;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-    border-color: rgb(197, 8, 197);
-    border-style: dotted;
+    border-color: rgba(99, 248, 144, 0.544);
+    border-style: transparent;
+    border-width: 1px;
+    
 }
 #name:hover {
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
+    text-decoration: none;
 }
 .new-1{
     text-align: center;
@@ -39,7 +43,12 @@ header{
 
 }
 #sanjay{
-
+    
+    padding-top: 30px;
+    border-color: aqua;
+    border-width: 20px;
+    height: 100px;
+    width: 300px;
     color: rgba(82, 7, 234, 0.874);
     text-align: left;
     font-size: 40px;
