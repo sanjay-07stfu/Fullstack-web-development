@@ -1,0 +1,44 @@
+*{
+    background-color: rgba(16, 214, 73, 0.98);
+}
+footer{
+    height: 10px;
+}
+header{
+    height: 500px;
+}
+#name{
+    text-align: end;
+    margin: 0 20px;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+#name:hover {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+.new-1{
+    text-align: center;
+    color: white;
+}
+#name5{
+    color: white;
+    text-align: center;
+
+}
+#sanjay{
+
+    color: rgba(82, 7, 234, 0.874);
+    text-align: left;
+    font-size: 40px;
+}
