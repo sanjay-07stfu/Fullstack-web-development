@@ -1,0 +1,26 @@
+*{
+    background-color: #cef565;
+    pointer-events: painted;
+    
+}
+body{
+    
+    
+    margin: 0px;
+    height: 744px;
+    width: 700px;
+    padding: 22px;
+    text-align: center;
+    
+    
+}
+.navbar-1{
+    height: 300px;
+    width: 400px;
+    background-image:url("01.png");
+    margin: 50px;
+    background-size: cover;
+    color: #cef565;
+}
+
+
