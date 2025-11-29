@@ -18,3 +18,8 @@ button{
     color: #f08804;
     margin-right: 0px;
 }
+input[type="search"] {
+    color: black;  
+}
+
+
