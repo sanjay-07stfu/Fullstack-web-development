@@ -53,7 +53,7 @@ span{
   height: 550px;
   margin: -150px;
   transform-origin: right;
-  animation: colorChange 10s linear infinite;
+  animation: colorChange 5s linear infinite;
 }
 
 .glowing:nth-child(even) {
