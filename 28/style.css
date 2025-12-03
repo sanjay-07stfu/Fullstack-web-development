@@ -1,5 +1,7 @@
 *{
     background-color: rgba(16, 214, 73, 0.98);
+    padding: 0px;
+    margin: 0px;
 }
 footer{
     height: 10px;
@@ -37,11 +39,7 @@ header{
     text-align: center;
     color: white;
 }
-#name5{
-    color: white;
-    text-align: center;
 
-}
 #sanjay{
     
     padding-top: 30px;
