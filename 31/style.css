@@ -16,6 +16,11 @@
 }
 #contentBox{
     height: 700px;
+    margin-top: 8px;
+    margin-left: 116px;
+    margin-right: 116px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .logo-1{
@@ -56,6 +61,7 @@ input[type="text"]{
     border-radius: 5px;
     border: 1px solid rgba(210, 197, 197, 0.83);
     vertical-align: top;
+
 }
 #search{
     padding-bottom: 10px;
@@ -64,4 +70,40 @@ input[type="text"]{
     color: gray;
     vertical-align: center;
     text-align: left;
+}
+.new-block{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    vertical-align: top;
+    margin-left: 5px;
+    border: 1px solid rgba(210, 197, 197, 0.83);
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-right: 31px;
+    padding-bottom: 5px;
+    padding-left: 31px;
+    vertical-align: center;
+
+}
+#logo-3{
+    height: 32px;
+    width: 32px;
+    border: 1px solid rgba(210, 197, 197, 0.83);
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: right;
+    margin-left: 20px;
+
+}
+#logo-4{
+    height: 294px;
+    width: 294px;
+    border-radius: 50%;
+}
+.passage-1{
+    height: 42px;
+    width: 863px;
+    display: inline-block;
+    
 }
