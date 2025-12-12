@@ -2,7 +2,11 @@
     padding: 0px;
     margin: 0px;
 }
+body{
+    margin-top: 20px;
+}
 div{
+
     margin-right: 5px;
     margin-top: 5px;
     border: 2px solid rgb(5, 224, 184);
@@ -13,5 +17,45 @@ div{
 }
 .image-1{
     position: fixed;
+    background-image: url("01.png");
+    background-size: cover;
+    
 
 }
+
+.image-2{
+    margin-left: 20px;
+    background-image: url("02.png");
+    background-size: cover;
+    
+
+}
+.image-3{
+    
+    background-image: url("03.png");
+    background-size: cover;
+    
+
+}
+.image-4{
+    
+    background-image: url("04.png");
+    background-size: cover;
+    
+
+}
+.image-5{
+    
+    background-image: url("05.png");
+    background-size: cover;
+    
+
+}
+.image-6{
+    
+    background-image: url("06.png");
+    background-size: cover;
+    
+
+}
+
