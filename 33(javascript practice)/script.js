@@ -1,0 +1,1 @@
+alert("hello sanjay ,welcome to javascript basics")
