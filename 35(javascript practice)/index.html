@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Person JSON Example</title>
+</head>
+<body>
+<h2>Person Details</h2>
+
+<p id="name"></p>
+<p id="age"></p>
+<p id="city"></p>
+
+<script> fetch("person.json")
+.then(response => response.json())
+.then(person => {
+document.getElementById("name").textContent = "Name: " + person.name; document.getElementById("age").textContent = "Age: " + person.age; document.getElementById("city").textContent = "City: " + person.city;
+})
+.catch(error => console.error("Error loading JSON:", error));
+</script>
+</body>
+</html>
