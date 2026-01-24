@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 
-    <script src="test.js"></script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AngularJS Expressions</title>
+</head>
+
+<body ng-app>
+<h1>Application for AngularJS Expressions</h1>
+<div ng-init=" student = { firstname:'Sanjay, lastname:'yedage', rollno:23203A0067 }; marks = [80,90,88,90,93]; total = marks[0] + marks[1] + marks[2] + marks[3] + marks[4]; percentage = (total / 500) * 100 ">
+<p>Hello {{ student.firstname + ' ' + student.lastname }}!</p>
+<p>Roll No: {{ student.rollno }}</p>
+<p>Total Marks: {{ total }} / 500</p>
+<p>Percentage: {{ percentage | number:2 }} %</p>
+</div>	
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </body>
 </html>
