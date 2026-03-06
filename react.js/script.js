@@ -1,3 +1,3 @@
-import name from './app.js';
-import arr from './app.js'
+import {name,arr} from "./app.js"
 console.log(name);
+console.log(arr);
