@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0cff35, #287df5);
+  background: linear-gradient(135deg, #0cff35, #7a8391);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .card {
-  background: #fff;
+  background: #baaaaa;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
