@@ -163,12 +163,12 @@ function Cart() {
   };
 
   return (
-    <div>
+    <div style={{backgroundColor:"pink"}}>
       <h3>Pens: {cart.pen}</h3>
       <h3>Notebooks: {cart.notebook}</h3>
 
-      <button onClick={addPen}>Add Pen</button>
-      <button onClick={addNotebook}>Add Notebook</button>
+      <button className="btn-1" onClick={addPen}>Add Pen</button>
+      <button className="btn-2" onClick={addNotebook}>Add Notebook</button>
     </div>
   );
 }
