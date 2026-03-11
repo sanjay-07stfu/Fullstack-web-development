@@ -140,37 +140,38 @@
 // }
 // export default RegistrationForm;
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-function Cart() {
+// function Cart() {
 
-  const [cart, setCart] = useState({
-    pen: 1,
-    notebook: 2
-  });
+//   const [cart, setCart] = useState({
+//     pen: 1,
+//     notebook: 2
+//   });
 
-  const addPen = () => {
-    setCart({
-      ...cart,
-      pen: cart.pen + 1
-    });
-  };
-  const addNotebook = () => {
-    setCart({
-      ...cart,
-      notebook: cart.notebook + 1
-    });
-  };
+//   const addPen = () => {
+//     setCart({
+//       ...cart,
+//       pen: cart.pen + 1
+//     });
+//   };
+//   const addNotebook = () => {
+//     setCart({
+//       ...cart,
+//       notebook: cart.notebook + 1
+//     });
+//   };
 
-  return (
-    <div style={{backgroundColor:"pink"}}>
-      <h3>Pens: {cart.pen}</h3>
-      <h3>Notebooks: {cart.notebook}</h3>
+//   return (
+//     <div style={{backgroundColor:"pink"}}>
+//       <h3>Pens: {cart.pen}</h3>
+//       <h3>Notebooks: {cart.notebook}</h3>
 
-      <button className="btn-1" onClick={addPen}>Add Pen</button>
-      <button className="btn-2" onClick={addNotebook}>Add Notebook</button>
-    </div>
-  );
-}
+//       <button className="btn-1" onClick={addPen}>Add Pen</button>
+//       <button className="btn-2" onClick={addNotebook}>Add Notebook</button>
+//     </div>
+//   );
+// }
 
-export default Cart;
+// export default Cart;
+
