@@ -14,6 +14,7 @@ const DashboardPage = ({ darkMode, setDarkMode }) => {
     habits,
     moods,
     loading,
+    error,
     completionPercentage,
     createHabit,
     editHabit,
@@ -82,28 +83,48 @@ const DashboardPage = ({ darkMode, setDarkMode }) => {
   }
 
   const onAddHabit = async (payload) => {
-    await createHabit(payload)
-    showToast('Habit added successfully')
+    try {
+      await createHabit(payload)
+      showToast('Habit added successfully')
+    } catch (actionError) {
+      showToast(actionError.message || 'Failed to add habit', 'danger')
+    }
   }
 
   const onEditHabit = async (habitId, updates) => {
-    await editHabit(habitId, updates)
-    showToast('Habit updated')
+    try {
+      await editHabit(habitId, updates)
+      showToast('Habit updated')
+    } catch (actionError) {
+      showToast(actionError.message || 'Failed to update habit', 'danger')
+    }
   }
 
   const onDeleteHabit = async (habitId) => {
-    await removeHabit(habitId)
-    showToast('Habit deleted', 'danger')
+    try {
+      await removeHabit(habitId)
+      showToast('Habit deleted', 'danger')
+    } catch (actionError) {
+      showToast(actionError.message || 'Failed to delete habit', 'danger')
+    }
   }
 
   const onToggleHabit = async (habit) => {
-    await toggleCompletion(habit)
-    showToast('Completion status updated')
+    try {
+      await toggleCompletion(habit)
+      showToast('Completion status updated')
+    } catch (actionError) {
+      showToast(actionError.message || 'Failed to update completion', 'danger')
+    }
   }
 
   const onSaveMood = async (dateKey, mood) => {
-    await saveMood(dateKey, mood)
-    showToast(`Mood saved: ${mood}`)
+    try {
+      await saveMood(dateKey, mood)
+      showToast(`Mood saved: ${mood}`)
+    } catch (actionError) {
+      showToast(actionError.message || 'Failed to save mood', 'danger')
+    }
   }
 
   return (
@@ -149,6 +170,17 @@ const DashboardPage = ({ darkMode, setDarkMode }) => {
         </section>
 
         <HabitForm onAddHabit={onAddHabit} />
+
+        {error ? (
+          <section className="rounded-xl border border-rose-300 bg-rose-50 p-4 text-sm text-rose-700 dark:border-rose-700 dark:bg-rose-900/20 dark:text-rose-300">
+            <p className="font-medium">Could not load habits from Firestore.</p>
+            <p className="mt-1">{error}</p>
+            <p className="mt-2">
+              Check Firebase Authentication and Firestore rules. If using test mode,
+              ensure rules are not expired.
+            </p>
+          </section>
+        ) : null}
 
         <section className="grid gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 lg:grid-cols-4">
           <input

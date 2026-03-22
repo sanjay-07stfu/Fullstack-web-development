@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['vite.svg'],
+      includeAssets: ['habitflow-icon.svg'],
       manifest: {
         name: 'HabitFlow - Habit Tracker',
         short_name: 'HabitFlow',
@@ -19,7 +19,7 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: '/vite.svg',
+            src: '/habitflow-icon.svg',
             sizes: 'any',
             type: 'image/svg+xml',
           },

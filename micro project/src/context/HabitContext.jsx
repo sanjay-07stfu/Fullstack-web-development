@@ -25,22 +25,32 @@ export const HabitProvider = ({ children }) => {
   const [habits, setHabits] = useState([])
   const [moods, setMoods] = useState({})
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
   const remindedRef = useRef(new Set())
 
   useEffect(() => {
     if (!user) {
       setHabits([])
       setMoods({})
+      setError('')
       setLoading(false)
       return undefined
     }
 
     setLoading(true)
+    setError('')
 
-    const unsubscribeHabits = subscribeHabits(user.uid, (items) => {
-      setHabits(items)
-      setLoading(false)
-    })
+    const unsubscribeHabits = subscribeHabits(
+      user.uid,
+      (items) => {
+        setHabits(items)
+        setLoading(false)
+      },
+      (subscribeError) => {
+        setLoading(false)
+        setError(subscribeError.message || 'Unable to load habits from Firestore.')
+      },
+    )
 
     const unsubscribeMoods = subscribeMoods(user.uid, (nextMoods) => {
       setMoods(nextMoods)
@@ -143,6 +153,7 @@ export const HabitProvider = ({ children }) => {
       habits,
       moods,
       loading,
+      error,
       completionPercentage,
       createHabit,
       editHabit,
@@ -154,6 +165,7 @@ export const HabitProvider = ({ children }) => {
       habits,
       moods,
       loading,
+      error,
       completionPercentage,
       createHabit,
       editHabit,

@@ -5,8 +5,6 @@ import {
   deleteDoc,
   doc,
   onSnapshot,
-  orderBy,
-  query,
   serverTimestamp,
   setDoc,
   updateDoc,
@@ -16,12 +14,16 @@ import { db } from '../firebase/config'
 const userHabitsCollection = (uid) => collection(db, 'users', uid, 'habits')
 const userMoodsCollection = (uid) => collection(db, 'users', uid, 'moods')
 
-export const subscribeHabits = (uid, callback) => {
-  const habitsQuery = query(userHabitsCollection(uid), orderBy('createdAt', 'desc'))
-  return onSnapshot(habitsQuery, (snapshot) => {
-    callback(snapshot.docs.map((item) => ({ id: item.id, ...item.data() })))
-  })
-}
+export const subscribeHabits = (uid, callback, onError) =>
+  onSnapshot(
+    userHabitsCollection(uid),
+    (snapshot) => {
+      callback(snapshot.docs.map((item) => ({ id: item.id, ...item.data() })))
+    },
+    (error) => {
+      if (onError) onError(error)
+    },
+  )
 
 export const addHabit = (uid, habitData) =>
   addDoc(userHabitsCollection(uid), {
