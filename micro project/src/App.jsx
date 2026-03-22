@@ -65,12 +65,23 @@ const getLast7Days = () => {
   return days
 }
 
+const ACHIEVEMENTS = [
+  { id: 'first', name: 'First Step', emoji: '🎬', condition: (total) => total >= 1 },
+  { id: 'week', name: 'Week Warrior', emoji: '🔥', condition: (total, habits) => habits.some((h) => getCurrentStreak(h.completedDates, formatDateKey(new Date())) >= 7) },
+  { id: 'hundred', name: 'Century Club', emoji: '💯', condition: (total) => total >= 100 },
+  { id: 'month', name: 'Month Master', emoji: '🏆', condition: (total, habits) => habits.some((h) => getCurrentStreak(h.completedDates, formatDateKey(new Date())) >= 30) },
+  { id: 'perfect', name: 'Perfect Day', emoji: '✨', condition: (total, habits) => habits.length > 0 && habits.every((h) => h.completedDates.includes(formatDateKey(new Date()))) },
+]
+
 function App() {
   const [habitName, setHabitName] = useState('')
   const [habits, setHabits] = useState([])
   const [darkMode, setDarkMode] = useState(false)
   const [sortBy, setSortBy] = useState('streak')
   const [filterActive, setFilterActive] = useState(false)
+  const [showSchedule, setShowSchedule] = useState(false)
+  const [showBadges, setShowBadges] = useState(false)
+  const [scheduleTime, setScheduleTime] = useState('06:00')
 
   const todayKey = useMemo(() => formatDateKey(new Date()), [])
   const last7Days = useMemo(() => getLast7Days(), [])
@@ -106,6 +117,7 @@ function App() {
       color: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b'][
         habits.length % 5
       ],
+      scheduledTime: scheduleTime,
     }
 
     setHabits((currentHabits) => [newHabit, ...currentHabits])
@@ -210,6 +222,30 @@ function App() {
     }
   }, [habits, todayKey])
 
+  const unlockedAchievements = useMemo(() => {
+    return ACHIEVEMENTS.filter((ach) =>
+      ach.condition(stats.totalCompletions, habits),
+    )
+  }, [habits, stats.totalCompletions])
+
+  const weeklyStats = useMemo(() => {
+    const statsMap = {}
+    last7Days.forEach((day) => {
+      statsMap[day.date] = habits.filter((h) =>
+        h.completedDates.includes(day.date),
+      ).length
+    })
+    return last7Days.map((day) => ({
+      ...day,
+      count: statsMap[day.date] || 0,
+    }))
+  }, [habits, last7Days])
+
+  const maxDaily = useMemo(
+    () => Math.max(...weeklyStats.map((s) => s.count), 5),
+    [weeklyStats],
+  )
+
   return (
     <div className={`app-container ${darkMode ? 'dark' : 'light'}`}>
       <main className="app-shell">
@@ -267,6 +303,13 @@ function App() {
               aria-label="Habit name"
               className="form-input"
             />
+            <input
+              type="time"
+              value={scheduleTime}
+              onChange={(event) => setScheduleTime(event.target.value)}
+              className="form-input time-input"
+              title="Schedule time"
+            />
             <button type="submit" className="form-submit">
               <span>+</span> Add
             </button>
@@ -292,7 +335,105 @@ function App() {
           >
             {filterActive ? '✓ Today Only' : '⊙ All Habits'}
           </button>
+          <button
+            className={`feature-btn ${showSchedule ? 'active' : ''}`}
+            onClick={() => setShowSchedule(!showSchedule)}
+          >
+            📅 Daily Schedule
+          </button>
+          <button
+            className={`feature-btn ${showBadges ? 'active' : ''}`}
+            onClick={() => setShowBadges(!showBadges)}
+          >
+            🏆 Achievements ({unlockedAchievements.length})
+          </button>
         </div>
+
+        {showBadges && (
+          <section className="achievements-section">
+            <h3 className="section-title">🏆 Your Achievements</h3>
+            <div className="achievements-grid">
+              {ACHIEVEMENTS.map((achievement) => {
+                const isUnlocked = unlockedAchievements.some(
+                  (u) => u.id === achievement.id,
+                )
+                return (
+                  <div
+                    className={`achievement-badge ${isUnlocked ? 'unlocked' : ''}`}
+                    key={achievement.id}
+                  >
+                    <div className="achievement-emoji">{achievement.emoji}</div>
+                    <div className="achievement-name">{achievement.name}</div>
+                    {!isUnlocked && <div className="achievement-lock">🔒</div>}
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+        )}
+
+        {showSchedule && (
+          <section className="weekly-stats-section">
+            <h3 className="section-title">📊 Weekly Performance</h3>
+            <div className="weekly-chart">
+              {weeklyStats.map((day) => (
+                <div className="chart-bar" key={day.date}>
+                  <div
+                    className="bar-fill"
+                    style={{
+                      height: `${(day.count / maxDaily) * 100}%`,
+                      background: `linear-gradient(180deg, #667eea 0%, #764ba2 100%)`,
+                    }}
+                  ></div>
+                  <div className="bar-label">{day.label}</div>
+                  <div className="bar-count">{day.count}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {showSchedule && (
+          <section className="daily-schedule-section">
+            <h3 className="section-title">⏰ Today's Schedule</h3>
+            <div className="schedule-list">
+              {sortedHabits.length === 0 ? (
+                <p className="no-schedule">No habits scheduled yet</p>
+              ) : (
+                sortedHabits
+                  .sort(
+                    (a, b) =>
+                      a.scheduledTime.localeCompare(b.scheduledTime),
+                  )
+                  .map((habit) => {
+                    const isDoneToday = habit.completedDates.includes(todayKey)
+                    return (
+                      <div
+                        className={`schedule-item ${isDoneToday ? 'done' : ''}`}
+                        key={habit.id}
+                        style={{ borderLeftColor: habit.color }}
+                      >
+                        <div className="time-display">{habit.scheduledTime}</div>
+                        <div className="habit-detail">
+                          <div className="habit-title">{habit.name}</div>
+                          <div className="habit-status">
+                            {isDoneToday ? '✓ Completed' : '⏳ Pending'}
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          className={`schedule-check ${isDoneToday ? 'checked' : ''}`}
+                          onClick={() => toggleToday(habit.id)}
+                        >
+                          {isDoneToday ? '✓' : '○'}
+                        </button>
+                      </div>
+                    )
+                  })
+              )}
+            </div>
+          </section>
+        )}
 
         <section className="habit-list" aria-live="polite">
           {sortedHabits.length === 0 ? (
@@ -323,6 +464,7 @@ function App() {
                   <div className="habit-header">
                     <div className="habit-info">
                       <h2 className="habit-name">{habit.name}</h2>
+                      <div className="habit-time">⏰ {habit.scheduledTime}</div>
                       <div className="streak-badges">
                         <span
                           className={`badge current ${isDoneToday ? 'active' : ''}`}
