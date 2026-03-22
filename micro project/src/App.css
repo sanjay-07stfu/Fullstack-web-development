@@ -290,6 +290,17 @@
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
+.export-btn {
+  background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+}
+
+.export-btn:hover {
+  background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+}
+
 .section-title {
   color: rgba(255, 255, 255, 0.95);
   font-size: 1.3rem;
@@ -298,6 +309,120 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.focus-section {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.focus-card {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.focus-habit-name {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.focus-time {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.focus-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.focus-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 0.8rem;
+}
+
+.focus-metric-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.focus-metric-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.focus-metric-value {
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.focus-weekly-chart {
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.45rem;
+}
+
+.focus-chart-bar {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.focus-chart-fill {
+  width: 100%;
+  min-height: 6px;
+  border-radius: 8px 8px 2px 2px;
+  background: linear-gradient(180deg, #34d399 0%, #10b981 100%);
+}
+
+.focus-chart-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.focus-chart-minutes {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.focus-btn {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.focus-btn:hover:enabled {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.focus-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .achievements-section,
@@ -699,7 +824,7 @@
 
 .actions {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   gap: 0.8rem;
 }
 
@@ -762,6 +887,25 @@
   box-shadow: 0 6px 16px rgba(198, 40, 40, 0.25);
 }
 
+.btn-focus {
+  min-width: 98px;
+  background: rgba(102, 126, 234, 0.16);
+  color: #3f51b5;
+  border: 1px solid rgba(102, 126, 234, 0.4);
+}
+
+.btn-focus:hover {
+  background: rgba(102, 126, 234, 0.26);
+  transform: translateY(-2px);
+}
+
+.btn-focus.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
 .btn:active {
   transform: translateY(0);
 }
@@ -793,6 +937,18 @@
   .feature-btn {
     flex: 1;
     width: 100%;
+  }
+
+  .focus-time {
+    font-size: 1.8rem;
+  }
+
+  .focus-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .focus-weekly-chart {
+    height: 105px;
   }
 
   .habit-card {
@@ -866,5 +1022,13 @@
 
   .time-input {
     max-width: 100%;
+  }
+
+  .actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .btn-delete {
+    width: 100%;
   }
 }
