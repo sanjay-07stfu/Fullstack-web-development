@@ -18,13 +18,15 @@
   height: 400px;
   width: 300px;
   border-radius: 15px;
-  padding: 20px;
+  padding: 30px;
   
 }
 .logo1{
-  height: 30px;
-  width: 30px;
+  height: 32px;
+  width: 32px;
   border-radius: 50%;
+  border:1px solid #dadada;
+  padding:2px;
 }
 
 .footer{
@@ -35,16 +37,22 @@
   height: 1px;
   background-color:whitesmoke;
 }
+.top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .top button{
-  height: 30px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid white;
-  
+  display: flex;
+  align-items: center;
+  border: 1px solid #dadada;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  gap: 3px;
+  background-color: transparent;
+  color: #dadada;
 
 }
 
-.top-button .icon {
-  width: 24px;
-  height: 24px;
-}
+

@@ -8,7 +8,7 @@ function App() {
       <div className="card">
         <div className="top">
           <img className="logo1" src="https://tse3.mm.bing.net/th/id/OIP.YKFZjzosPzcUtBNHe9cAdAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Amazon" />
-          <button>Save <Bookmark  /></button>
+          <button>Save <Bookmark size={12} /></button>
         </div>
 
         <div className="center">
