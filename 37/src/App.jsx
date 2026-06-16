@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import {Bookmark} from "lucide-react";
+import { Bookmark } from "lucide-react";
 
 function App() {
   return (
@@ -12,17 +12,19 @@ function App() {
         </div>
 
         <div className="center">
-          <h3>Amazon</h3>
-          <spam>3 days ago</spam>
-          <h1>Senior UI/UX Designer</h1>
-          <button>Part-Time</button> <button>Senior Level</button>
+          <h3 ><bold>Amazon <span>5 days ago</span></bold></h3>
 
+          <h2>Senior UI/UX Designer</h2>
+          <div className="button-02">
+            <button>Part-Time</button> <button>Senior Level</button>
+          </div>
+        </div>
+        <div className="line">
         </div>
         <div className="footer">
-          <div className="line"></div>
-          <spam>$120/hr</spam>
+          <span>$120/hr</span>
+            <p>Mumbai,india</p>
           <button>Apply Now</button>
-          <p>Mumbai,india</p>
 
 
         </div>
