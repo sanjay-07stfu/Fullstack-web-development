@@ -6,6 +6,7 @@
   
 }
 .parent{
+  display: flex;
   height: 100vh;
   width: 100%;
   background-color: #111;
@@ -23,6 +24,7 @@
   flex-direction: column;
   justify-content: space-between;
   
+  
 }
 .logo1{
   height: 32px;
@@ -32,7 +34,10 @@
   padding:4px;
 }
 .line {
-  border: 1px solid #d1d1d1;
+  position: relative;
+  top:70px;
+  border-bottom: 1px solid #d1d1d1; 
+  
 }
 .footer{
   display: flex;
@@ -61,7 +66,6 @@
 
 .center h3 span{
   font-size: 10px;
-  font-weight: 400px;
   color: #d1d1d1;
 
 }
@@ -90,7 +94,6 @@
 .footer span{
 
   font-size: large;
-  font-weight: 500px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
