@@ -6,8 +6,9 @@
   
 }
 .parent{
+  min-height:50vh;
   display: flex;
-  height: 100vh;
+  flex-wrap: wrap;
   width: 100%;
   background-color: #111;
   padding: 20px;
